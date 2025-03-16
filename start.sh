@@ -13,6 +13,6 @@ chmod 777 ${N8N_ROOT}
 mkdir -p ${DATA_FOLDER}
 chmod 777 ${DATA_FOLDER}
 
-docker run -d --rm --name n8n -p ${EXTRENAL_PORT}:5678 -v ${DATA_FOLDER}:/home/node/.n8n docker.n8n.io/n8nio/n8n
+docker run -d --rm --name n8n -p ${EXTRENAL_PORT}:5678 -v ${DATA_FOLDER}:/home/node/.n8n -e N8N_SECURE_COOKIE=false -e NODE_TLS_REJECT_UNAUTHORIZED=0 docker.n8n.io/n8nio/n8n
 
 echo "n8n accessable on port ${EXTRENAL_PORT}"
